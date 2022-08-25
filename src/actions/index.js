@@ -1,7 +1,23 @@
-{
-    type:'ADD_MOVIES',
-    movies;[m1,m2,m3]
+// {
+//     type:'ADD_MOVIES',
+//     movies;[m1,m2,m3]
+// }
+// {
+//   type: "DECREASE_COUNT";
+// }
+//action types 
+export  const ADD_MOVIES = "ADD_MOVIES";
+export const ADD_FAVOURITE = "ADD_FAVOURITE";
+//actioon creaters
+export function addMovie(movies){
+        return {
+            type:ADD_MOVIES,
+            movies
+        }
 }
-{
-  type: "DECREASE_COUNT";
+export function addFavourite(movie) {
+  return {
+    type: ADD_FAVOURITE,
+    movie
+  };
 }
