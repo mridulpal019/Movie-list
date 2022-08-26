@@ -33,13 +33,13 @@ class App extends React.Component {
     this.props.store.dispatch(setShowFavourite(value))
   }
   render() {
-    const { movies } = this.props.store.getState();
+    const { movies,search } = this.props.store.getState();
     const { list, favorites, showFavourites } = movies;
     
     const displayMovies=showFavourites ? favorites : list
     return (
       <div className="App">
-        <Navbar />
+        <Navbar dispatch={this.props.store.dispatch} search={search}/>
         <div className="main">
           <div className="tabs">
             <div
@@ -69,7 +69,11 @@ class App extends React.Component {
               />
             ))}
           </div>
-          {displayMovies.length === 0 ? <div className="no-movies">No Movies to Display!!!</div>:''}
+          {displayMovies.length === 0 ? (
+            <div className="no-movies">No Movies to Display!!!</div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );
