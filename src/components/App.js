@@ -1,9 +1,10 @@
 import Navbar from "./Navbar";
 import MovieCard from "./MovieCard";
 import React from "react";
+import { connect } from "react-redux";
 import { data } from "../data";
 import { addMovie, setShowFavourite } from "../actions";
-import {connect} from '../index';
+// import {connect} from '../index';
 
 
 class App extends React.Component {
